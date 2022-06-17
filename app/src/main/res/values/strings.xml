@@ -10,7 +10,8 @@
     <string name="common_network_error">请求失败，请检查网络</string>
     <string name="common_loading">加载中…</string>
 
-    <string name="title_data">资料</string>
+    <string name="title_hero">英雄</string>
+    <string name="title_weapon">装备</string>
     <string name="title_dashboard">搭配</string>
     <string name="title_news">资讯</string>
     <string name="title_filter">添加英雄</string>

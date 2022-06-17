@@ -5,7 +5,7 @@ import com.dss886.dotaautochess.R
 /**
  * Created by dss886 on 2019/1/26.
  */
-enum class Ability constructor(var desc: String, var iconRes: Int) {
+enum class Ability constructor(var title: String, var iconRes: Int) {
 
     BerserkersCall("狂战士之吼", R.mipmap.ability_berserkers_call_icon),
     NaturesAttendants("自然之助", R.mipmap.ability_natures_attendants_icon),

@@ -4,7 +4,12 @@
     <item
         android:id="@+id/navigation_data"
         android:icon="@drawable/ic_data"
-        android:title="@string/title_data"/>
+        android:title="@string/title_hero"/>
+
+    <item
+        android:id="@+id/navigation_weapon"
+        android:icon="@drawable/ic_weapon"
+        android:title="@string/title_weapon"/>
 
     <item
         android:id="@+id/navigation_dashboard"

@@ -2,9 +2,11 @@ package com.dss886.dotaautochess
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.dss886.dotaautochess.app.BaseActivity
 import com.dss886.dotaautochess.feature.hero.AllHeroFragment
+import com.dss886.dotaautochess.feature.hero.WeaponFragment
 import com.dss886.dotaautochess.feature.match.MatchFragment
 import com.dss886.dotaautochess.feature.news.NewsFragment
 import com.dss886.dotaautochess.feature.setting.UpdateManager
@@ -15,11 +17,13 @@ class MainActivity : BaseActivity() {
 
     companion object {
         private const val TAG_FRAGMENT_HERO = "1"
-        private const val TAG_FRAGMENT_MATCH = "2"
-        private const val TAG_FRAGMENT_NEWS = "3"
+        private const val TAG_FRAGMENT_WEAPON = "2"
+        private const val TAG_FRAGMENT_MATCH = "3"
+        private const val TAG_FRAGMENT_NEWS = "4"
     }
 
     private val mHeroFragment = AllHeroFragment()
+    private val mWeaponFragment = WeaponFragment()
     private val mMatchFragment = MatchFragment()
     private val mNewsFragment = NewsFragment()
     private val mFragmentManager = supportFragmentManager
@@ -27,9 +31,18 @@ class MainActivity : BaseActivity() {
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_data -> switchFragment(mHeroFragment)
-            R.id.navigation_dashboard -> switchFragment(mMatchFragment)
-            R.id.navigation_news -> switchFragment(mNewsFragment)
+            R.id.navigation_data -> {
+                switchFragment(mHeroFragment)
+            }
+            R.id.navigation_weapon -> {
+                switchFragment(mWeaponFragment)
+            }
+            R.id.navigation_dashboard -> {
+                switchFragment(mMatchFragment)
+            }
+            R.id.navigation_news -> {
+                switchFragment(mNewsFragment)
+            }
             else -> false
         }
     }
@@ -51,6 +64,8 @@ class MainActivity : BaseActivity() {
                 .hide(mNewsFragment)
                 .add(R.id.main_container, mMatchFragment, TAG_FRAGMENT_MATCH)
                 .hide(mMatchFragment)
+                .add(R.id.main_container, mWeaponFragment, TAG_FRAGMENT_WEAPON)
+                .hide(mWeaponFragment)
                 .add(R.id.main_container, mHeroFragment, TAG_FRAGMENT_HERO)
                 .commit()
         mActiveFragment = mHeroFragment
